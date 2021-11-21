@@ -1,19 +1,18 @@
-
 import math
 
 import lithium_enrichment_cost_calculator as lecc
 
-class TestFindCostOfEnrichment():
 
+class TestFindCostOfEnrichment:
     def test_increasing_product_amount_increases_cost(self):
         lecc.find_cost_of_enrichment(
-            product_amount=100.,
-            product_enrichment=60,
+            product_amount=100.0,
+            product_enrichment_fraction=0.6,
             swu_cost=56,
             tails_cost=27,
-            tails_enrichment=3.,
+            tails_enrichment_fraction=0.03,
             feed_cost=29,
-            feed_enrichment=7.59
+            feed_enrichment_fraction=0.0759,
         )
         pass
 

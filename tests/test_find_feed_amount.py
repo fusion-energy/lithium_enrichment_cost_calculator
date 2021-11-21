@@ -1,10 +1,9 @@
-
 import math
 
 import lithium_enrichment_cost_calculator as lecc
 
-class TestFindFeedAmount():
 
+class TestFindFeedAmount:
     def test_increased_product_amount_increases_feed_amount(self):
 
         feed_amount_small = lecc.find_feed_amount(
@@ -48,4 +47,3 @@ class TestFindFeedAmount():
     # def test_increased_tails_enrichment_increases_feed_amount(self):
 
     # def test_increased_feed_enrichment_decreases_feed_amount(self):
-

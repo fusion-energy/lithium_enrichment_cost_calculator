@@ -1,10 +1,9 @@
-
 import math
 
 import lithium_enrichment_cost_calculator as lecc
 
-class TestFindSwuAmount():
 
+class TestFindSwuAmount:
     def test_increasing_product_amount_increases_swu(self):
 
         swu_amount_small = lecc.find_swu_amount(
@@ -25,9 +24,8 @@ class TestFindSwuAmount():
         assert swu_amount_large > 0
         assert swu_amount_small < swu_amount_large
 
-    
     def test_increasing_product_increases_swu(self):
-    
+
         swu_amount_small = lecc.find_swu_amount(
             product_amount=100,
             product_enrichment_fraction=0.6,
@@ -45,7 +43,7 @@ class TestFindSwuAmount():
         assert swu_amount_small > 0
         assert swu_amount_large > 0
         assert swu_amount_small < swu_amount_large
-    
+
     def test_increasing_tails_amount_decreases_swu(self):
         pass
 
