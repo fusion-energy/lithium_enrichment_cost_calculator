@@ -23,9 +23,9 @@ class TestFindCostOfEnrichment:
             feed_cost=29,
             feed_enrichment_fraction=0.0759,
         )
-        assert small_product_amount> 0
-        assert large_product_amount> 0
-        assert large_product_amount> small_product_amount
+        assert small_product_amount > 0
+        assert large_product_amount > 0
+        assert large_product_amount > small_product_amount
 
     def test_increasing_product_enrichment_increases_cost(self):
         pass
