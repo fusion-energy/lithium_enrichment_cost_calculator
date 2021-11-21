@@ -9,16 +9,16 @@ class TestFindFeedAmount():
 
         feed_amount_small = lecc.find_feed_amount(
             product_amount=100,
-            product_enrichment=50,
-            tails_enrichment=3.,
-            feed_enrichment=7.59,
+            product_enrichment_fraction=0.5,
+            tails_enrichment_fraction=0.3,
+            feed_enrichment_fraction=0.0759,
         )
 
         feed_amount_large = lecc.find_feed_amount(
             product_amount=200,
-            product_enrichment=50,
-            tails_enrichment=3.,
-            feed_enrichment=7.59,
+            product_enrichment_fraction=0.5,
+            tails_enrichment_fraction=0.3,
+            feed_enrichment_fraction=0.0759,
         )
 
         assert feed_amount_small * 2 == feed_amount_large

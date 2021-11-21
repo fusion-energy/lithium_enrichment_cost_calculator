@@ -5,12 +5,12 @@ import math
 def find_feed_amount(
     product_amount,
     product_enrichment_fraction,
-    tails_enrichment,
+    tails_enrichment_fraction,
     feed_enrichment_fraction=0.0759,
 ):
 
-    numerator = product_enrichment_fraction - tails_enrichment
-    denominator = feed_enrichment_fraction - tails_enrichment
+    numerator = product_enrichment_fraction - tails_enrichment_fraction
+    denominator = feed_enrichment_fraction - tails_enrichment_fraction
 
     feed_amount = product_amount*(numerator/denominator)
 
