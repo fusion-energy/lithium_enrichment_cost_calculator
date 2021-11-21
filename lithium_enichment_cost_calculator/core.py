@@ -48,7 +48,7 @@ def find_cost_of_enrichment(
         product_amount,
         product_enrichment,
         tails_enrichment,
-        feed_enrichment=0.079,
+        feed_enrichment=7.59,
     )
 
     tails_amount = feed_amount - product_amount
@@ -84,6 +84,6 @@ if __name__ == '__main__':
     #     product_amount=100,
     #     product_enrichment=60,
     #     tails_enrichment=4.,
-    #     feed_enrichment=7.9,
+    #     feed_enrichment=7.59,
     # )
     # print(feed_amount)
