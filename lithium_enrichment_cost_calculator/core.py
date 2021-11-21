@@ -7,9 +7,9 @@ def find_feed_amount(
     tails_enrichment_fraction,
     feed_enrichment_fraction=0.0759,
 ):
-    assert product_enrichment_fraction < 1.
-    assert tails_enrichment_fraction < 1.
-    assert feed_enrichment_fraction < 1.
+    assert product_enrichment_fraction < 1.0
+    assert tails_enrichment_fraction < 1.0
+    assert feed_enrichment_fraction < 1.0
     if product_enrichment_fraction > feed_enrichment_fraction:
         assert tails_enrichment_fraction < feed_enrichment_fraction
     if product_enrichment_fraction < feed_enrichment_fraction:
@@ -30,9 +30,9 @@ def find_swu_amount(
     feed_enrichment_fraction,
 ):
 
-    assert product_enrichment_fraction < 1.
-    assert tails_enrichment_fraction < 1.
-    assert feed_enrichment_fraction < 1.
+    assert product_enrichment_fraction < 1.0
+    assert tails_enrichment_fraction < 1.0
+    assert feed_enrichment_fraction < 1.0
 
     feed_amount = find_feed_amount(
         product_amount=product_amount,
@@ -74,9 +74,9 @@ def find_cost_of_enrichment(
     feed_enrichment_fraction=0.0759,
 ):
 
-    assert product_enrichment_fraction < 1.
-    assert tails_enrichment_fraction < 1.
-    assert feed_enrichment_fraction < 1.
+    assert product_enrichment_fraction < 1.0
+    assert tails_enrichment_fraction < 1.0
+    assert feed_enrichment_fraction < 1.0
 
     feed_amount = find_feed_amount(
         product_amount,
