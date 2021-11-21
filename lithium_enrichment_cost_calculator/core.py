@@ -9,6 +9,11 @@ def find_feed_amount(
     feed_enrichment_fraction=0.0759,
 ):
 
+    if product_enrichment_fraction > feed_enrichment_fraction:
+        assert tails_enrichment_fraction  < feed_enrichment_fraction
+    if product_enrichment_fraction < feed_enrichment_fraction:
+        assert tails_enrichment_fraction  > feed_enrichment_fraction
+
     numerator = product_enrichment_fraction - tails_enrichment_fraction
     denominator = feed_enrichment_fraction - tails_enrichment_fraction
 
@@ -20,16 +25,25 @@ def find_feed_amount(
 def find_swu_amount(
     product_amount,
     product_enrichment_fraction,
-    tails_amount,
     tails_enrichment_fraction,
-    feed_amount,
     feed_enrichment_fraction,
 ):
+
+    feed_amount = find_feed_amount(
+        product_amount=product_amount,
+        product_enrichment_fraction=product_enrichment_fraction,
+        tails_enrichment_fraction=tails_enrichment_fraction,
+        feed_enrichment_fraction=feed_enrichment_fraction,
+    )
+
+    tails_amount = feed_amount - product_amount
+
+
     feed_term = feed_amount*((2.*feed_enrichment_fraction)-1.) * math.log(feed_enrichment_fraction/(1.-feed_enrichment_fraction))
-    tails_term = tails_amount*(2.*tails_enrichment_fraction-1.) * math.log(tails_enrichment_fraction/(1.-tails_enrichment_fraction))
-    product_term = product_amount*(2.*product_enrichment_fraction-1.) * math.log(product_enrichment_fraction/(1.-product_enrichment_fraction))
+    tails_term = tails_amount*((2.*tails_enrichment_fraction)-1.) * math.log(tails_enrichment_fraction/(1.-tails_enrichment_fraction))
+    product_term = product_amount*((2.*product_enrichment_fraction)-1.) * math.log(product_enrichment_fraction/(1.-product_enrichment_fraction))
     
-    swu = product_term+tails_term+feed_term
+    swu = product_term+tails_term-feed_term
 
     return swu
 
@@ -75,6 +89,7 @@ def find_minimal_cost_of_enrichment(
     feed_cost,
     swu_cost,
     tails_cost,
+    feed_enrichment_fraction=0.0759
 ):
     pass
 
