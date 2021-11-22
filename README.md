@@ -1,5 +1,3 @@
-# lithium enrichment cost calculator
-
 A Python package that is able to estimate the cost of lithium enrichment using a separative work approach.
 
 <!-- This package is available in a convenient (web app)[]. -->
@@ -16,11 +14,11 @@ Required information
 
 - Cost of input feed stock (```cost_feed```)
 
-- Enrichment percent of input feed stock (```product_enrichment```) which defaults to be lithium natural abundance of isotopes (7.59% Li6 and 92.41% Li7).
+- Enrichment percent of input feed stock (```product_enrichment_fraction```) which defaults to be lithium natural abundance of isotopes (7.59% Li6 and 92.41% Li7).
 
 - Amount of enriched product required (```product_amount```).
 
-- Enrichment percent of lithium 6 required in the product (```product_enrichment```).
+- Enrichment percent of lithium 6 required in the product (```product_enrichment_fraction```).
 
 - Resale value of the depleted tails (```cost_tails```).
 
@@ -38,7 +36,7 @@ import lithium_enrichment_cost_calculator as lecc
 
 minimal_enrichment_cost, tails_percent = lecc.find_minimal_cost_of_enrichment(
     product_amount=1000,  # 1000kg of enriched lithium
-    product_enrichment=60,  # 60% is a typical HCPB blanket enrichment amount
+    product_enrichment_fraction=60,  # 60% is a typical HCPB blanket enrichment amount
     feed_cost=29,  #Cost in $ per kg from https://www.lme.com/Metals/EV/Lithium-prices
     swu_cost=50,  # Cost on $ per kg based on typical Uranium SWU costs
     tails_cost=900,  # Assuming there is a market for depleted lithium where 10% discount has been applied.
