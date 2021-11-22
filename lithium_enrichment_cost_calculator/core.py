@@ -94,7 +94,11 @@ def find_cost_of_enrichment(
         feed_enrichment_fraction=feed_enrichment_fraction,
     )
 
-    cost = (swu_cost * swu_amount) + (feed_amount * feed_cost) - (tails_amount * tails_cost)
+    cost = (
+        (swu_cost * swu_amount)
+        + (feed_amount * feed_cost)
+        - (tails_amount * tails_cost)
+    )
 
     return cost
 
