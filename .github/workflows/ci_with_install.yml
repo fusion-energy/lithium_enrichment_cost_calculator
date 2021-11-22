@@ -9,7 +9,12 @@ on:
       - develop
       - main
     paths:
-      - '**.py'
+      - 'docs/**'
+      - '.gitignore'
+      - '*.md'
+      - 'CITATION.cff'
+      - 'LICENSE.txt'
+      - 'readthedocs.yml'
 
 jobs:
   testing:
