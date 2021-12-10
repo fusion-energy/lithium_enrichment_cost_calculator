@@ -83,7 +83,7 @@ def find_cost_of_enrichment(
         product_amount,
         product_enrichment_fraction,
         tails_enrichment_fraction,
-        feed_enrichment_fraction=0.0759,
+        feed_enrichment_fraction,
     )
 
     tails_amount = feed_amount - product_amount
@@ -148,14 +148,3 @@ def find_minimal_cost_of_enrichment(
             optimal_tails_enrichment_fraction = tails_enrichment_fraction
 
     return minimal_cost, optimal_tails_enrichment_fraction
-
-
-if __name__ == "__main__":
-    pass
-    # feed_amount = find_feed_amount(
-    #     product_amount=100,
-    #     product_enrichment_fraction=60,
-    #     tails_enrichment_fraction=4.,
-    #     feed_enrichment_fraction=0.0759,
-    # )
-    # print(feed_amount)
