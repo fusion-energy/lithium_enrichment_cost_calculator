@@ -44,6 +44,7 @@ jobs:
         run: |
           python examples/examples_from_readme.py
           python examples/find_cost_of_enrichment.py
+          python examples/find_minimal_cost_of_enrichment.py
 
       - name: Upload to codecov
         uses: codecov/codecov-action@v2
