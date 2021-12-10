@@ -30,7 +30,7 @@ jobs:
 
       - name: install package
         run: |
-          python setup.py install
+          python setup.py install --user
 
       - name: install packages needed for testing
         run: |
