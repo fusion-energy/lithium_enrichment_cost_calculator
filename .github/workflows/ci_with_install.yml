@@ -8,7 +8,7 @@ on:
     branches:
       - develop
       - main
-    paths:
+    paths-ignore:
       - 'docs/**'
       - '.gitignore'
       - '*.md'
@@ -30,7 +30,7 @@ jobs:
 
       - name: install package
         run: |
-          python setup.py install
+          python setup.py install --user
 
       - name: install packages needed for testing
         run: |
@@ -44,6 +44,7 @@ jobs:
         run: |
           python examples/examples_from_readme.py
           python examples/find_cost_of_enrichment.py
+          python examples/find_minimal_cost_of_enrichment.py
 
       - name: Upload to codecov
         uses: codecov/codecov-action@v2

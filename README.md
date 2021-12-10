@@ -1,3 +1,7 @@
+[![CI with install](https://github.com/fusion-energy/lithium_enrichment_cost_calculator/actions/workflows/ci_with_install.yml/badge.svg)](https://github.com/fusion-energy/lithium_enrichment_cost_calculator/actions/workflows/ci_with_install.yml)
+
+[![Upload Python Package](https://github.com/fusion-energy/lithium_enrichment_cost_calculator/actions/workflows/python-publish.yml/badge.svg)](https://github.com/fusion-energy/lithium_enrichment_cost_calculator/actions/workflows/python-publish.yml)
+
 A Python package that is able to estimate the cost of lithium enrichment using a separative work approach.
 
 <!-- This package is available in a convenient (web app)[]. -->
