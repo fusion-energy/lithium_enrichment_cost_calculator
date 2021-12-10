@@ -116,14 +116,18 @@ def find_minimal_cost_of_enrichment(
     the tails_enrichment_fraction to find the minimal cost of enrichment for
     the given the inputs."""
 
-    #tails_enrichment_fraction is being optimised.
+    # tails_enrichment_fraction is being optimised.
     optimal_tails_enrichment_fraction = None
     minimal_cost = None
 
     step_size = 0.0000001
 
-    tails_enrichment_fraction_to_try = np.linspace(step_size,feed_enrichment_fraction-step_size,10000)
-    for counter, tails_enrichment_fraction in enumerate(tails_enrichment_fraction_to_try):
+    tails_enrichment_fraction_to_try = np.linspace(
+        step_size, feed_enrichment_fraction - step_size, 10000
+    )
+    for counter, tails_enrichment_fraction in enumerate(
+        tails_enrichment_fraction_to_try
+    ):
 
         cost = find_cost_of_enrichment(
             product_amount=product_amount,
@@ -132,21 +136,18 @@ def find_minimal_cost_of_enrichment(
             tails_cost=tails_cost,
             tails_enrichment_fraction=tails_enrichment_fraction,
             feed_cost=feed_cost,
-            feed_enrichment_fraction=feed_enrichment_fraction
+            feed_enrichment_fraction=feed_enrichment_fraction,
         )
 
         if counter == 0:
-            minimal_cost = cost 
+            minimal_cost = cost
             optimal_tails_enrichment_fraction = tails_enrichment_fraction
 
         if cost < minimal_cost:
-            minimal_cost = cost 
+            minimal_cost = cost
             optimal_tails_enrichment_fraction = tails_enrichment_fraction
- 
 
     return minimal_cost, optimal_tails_enrichment_fraction
-
-
 
 
 if __name__ == "__main__":
