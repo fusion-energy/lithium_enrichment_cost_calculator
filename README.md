@@ -47,7 +47,7 @@ minimal_enrichment_cost, tails_percent = lecc.find_minimal_cost_of_enrichment(
 )
 
 print(f'minimal_enrichment_cost {minimal_enrichment_cost} in $')
-print('lithium 6 enrichment in tails at this optimal cost is {tails_percent} %')
+print(f'lithium 6 enrichment in tails at this optimal cost is {tails_percent} %')
 ```
 
 The tails can be depleted to a lesser or greater amount to optimise the cost of the process. It is possible to achieve the required amount of product at the required enrichment in numerous ways. At the two extremes one could:
